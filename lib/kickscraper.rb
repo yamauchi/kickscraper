@@ -13,6 +13,10 @@ module Kickscraper
   extend Configure
   attr_accessor :client
 
+  def self.reload!
+    @client = Kickscraper::Client.new
+  end
+  
   def self.client
     @client ||= Kickscraper::Client.new
   end
